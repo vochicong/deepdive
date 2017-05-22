@@ -34,6 +34,8 @@ before_install:
   - docker pull $POSTGRES_DOCKER_IMAGE;
 
 install:
+  # Build, install and test on local host
+  - make depends install test
   # Build using Docker
   - ./DockerBuild/build-in-container
   # TODO tag the $DOCKER_IMAGE with TRAVIS environment
